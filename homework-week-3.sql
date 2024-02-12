@@ -1,6 +1,5 @@
 -- Creating external table referring to gcs path
 
-
 CREATE OR REPLACE EXTERNAL TABLE `zoomcamp-2024-rdilone.nytaxi.external_green_tripdata_2022`
 OPTIONS (
   format = 'parquet',
@@ -35,7 +34,7 @@ PARTITION BY DATE(lpep_pickup_datetime)
 CLUSTER BY PUlocationID AS
 SELECT * FROM zoomcamp-2024-rdilone.nytaxi.external_green_tripdata_2022;
 
---Write a query to retrieve the distinct PULocationID between lpep_pickup_datetime 06/01/2022 and 06/30/2022 (inclusive)
+--Question 5. Write a query to retrieve the distinct PULocationID between lpep_pickup_datetime 06/01/2022 and 06/30/2022 (inclusive)
 --Use the materialized table you created earlier in your from clause and note the estimated bytes. Now change the table in the from clause to the partitioned table you created for --question 4 and note the estimated bytes processed. What are these values?
 -- Choose the answer which most closely matches.
 
